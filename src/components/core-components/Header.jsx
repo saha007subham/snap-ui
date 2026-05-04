@@ -1,15 +1,18 @@
-import { Search, Moon } from "lucide-react";
+import { Search, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "@/components/ThemeProvider";
 
 export function Header() {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md ">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/40 backdrop-blur-lg transition-colors">
       <div className="flex items-center justify-between px-6 py-3">
         {/* Left Section: Logo */}
         <div className="flex items-center">
           <Link
             to="/"
-            className="text-xl font-bold tracking-tight text-slate-900"
+            className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
           >
             SnapUI
           </Link>
@@ -19,12 +22,12 @@ export function Header() {
         <div className="flex flex-1 items-center justify-center px-4 sm:px-8">
           <div className="relative w-full max-w-md">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-              <Search className="h-4 w-4 text-slate-400" />
+              <Search className="h-4 w-4 text-slate-400 dark:text-slate-500" />
             </div>
             <input
               type="text"
               placeholder="Search components..."
-              className="block w-full rounded-full border border-slate-300 bg-slate-50 py-2 pl-10 pr-4 text-sm text-slate-900 transition-colors focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              className="block w-full rounded-full border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 py-2 pl-10 pr-4 text-sm text-slate-900 dark:text-slate-100 transition-colors focus:border-blue-500 dark:focus:border-blue-500 focus:bg-white dark:focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
               aria-label="Search components"
             />
           </div>
@@ -33,16 +36,21 @@ export function Header() {
         {/* Right Section: Icons */}
         <div className="flex items-center gap-2 sm:gap-4">
           <button
-            className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 cursor-pointer"
             aria-label="Toggle dark mode"
           >
-            <Moon className="h-5 w-5" />
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
           </button>
           <a
-            href="https://github.com"
+            href="https://github.com/saha007subham/snap-ui"
             target="_blank"
             rel="noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-200"
+            className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700"
             aria-label="GitHub repository"
           >
             <svg

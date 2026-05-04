@@ -12,9 +12,9 @@ export function SideBar() {
   const navigate = useNavigate();
 
   return (
-    <aside className="h-full bg-white px-4 py-6">
+    <aside className="h-full px-4 py-6">
       {/* Title */}
-      <h2 className="text-lg font-semibold text-slate-900 mb-6">Components</h2>
+      <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Components</h2>
 
       {/* Navigation */}
       <nav className="space-y-1">
@@ -28,8 +28,8 @@ export function SideBar() {
               className={`w-full text-left px-3 py-2 rounded-md text-sm transition font-medium
                 ${
                   isActive
-                    ? "bg-slate-900 text-white"
-                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    ? "bg-slate-900 dark:bg-slate-800 text-white"
+                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white"
                 } cursor-pointer`}
             >
               {item.label}

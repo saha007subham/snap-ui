@@ -9,7 +9,7 @@ export const Card = forwardRef(({ className, children, ...props }, ref) => {
     <div
       ref={ref}
       className={cn(
-        "rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md",
+        "rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition-shadow hover:shadow-md",
         className,
       )}
       {...props}
@@ -23,7 +23,7 @@ Card.displayName = "Card";
 Card.Header = forwardRef(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("mb-2 text-lg font-bold text-slate-900", className)}
+    className={cn("mb-2 text-lg font-bold text-slate-900 dark:text-white", className)}
     {...props}
   >
     {children}
@@ -34,7 +34,7 @@ Card.Header.displayName = "Card.Header";
 Card.Body = forwardRef(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm text-slate-500 leading-relaxed", className)}
+    className={cn("text-sm text-slate-500 dark:text-slate-400 leading-relaxed", className)}
     {...props}
   >
     {children}

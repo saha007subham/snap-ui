@@ -3,13 +3,13 @@ import { SideBar } from "@/components/core-components/SideBar";
 
 export function ComponentDocs() {
   return (
-    <div className="flex bg-white items-start">
+    <div className="flex items-start transition-colors w-full h-full">
       {/* Sidebar */}
-      <div className="w-64 flex-shrink-0 border-r border-slate-200 sticky top-[61px] h-[calc(100vh-61px)] overflow-y-auto hidden md:block">
+      <div className="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 h-full overflow-y-auto hidden md:block">
         <SideBar />
       </div>
       {/* Main Content Area */}
-      <main className="flex-1 min-w-0">
+      <main className="flex-1 min-w-0 h-full overflow-y-auto relative">
         <Outlet />
       </main>
     </div>

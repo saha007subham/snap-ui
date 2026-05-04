@@ -6,7 +6,7 @@ import { cardCodeString } from "@/components/code/cardCode";
 
 function CardUsagePreview() {
   return (
-    <div className="flex items-center justify-center bg-slate-50 p-12 rounded-xl border border-slate-200 shadow-inner">
+    <div className="flex items-center justify-center bg-slate-50 dark:bg-slate-900/50 p-12 rounded-xl border border-slate-200 dark:border-slate-800 shadow-inner">
       <Card className="w-full max-w-sm">
         <Card.Header>Card Title</Card.Header>
         <Card.Body>This is a simple card description.</Card.Body>
@@ -47,14 +47,14 @@ export function CardDocs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-transparent transition-colors w-full">
       <div className="max-w-6xl mx-auto px-6 py-16 space-y-16">
         {/* Title Section */}
         <section className="space-y-4">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">
+          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Card Component
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl">
             A flexible card component built with React and Tailwind CSS using a
             compound component pattern. Use these SnapUI card components to
             break your dashboards, profile pages, or admin interfaces up into
@@ -62,7 +62,7 @@ export function CardDocs() {
             These components are designed and built by the SnapUI team, and
             include a variety of different styles and layouts.
           </p>
-          <div className="inline-block px-3 py-1 bg-amber-50 text-amber-800 text-sm rounded-full border border-amber-200 font-medium">
+          <div className="inline-block px-3 py-1 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-400 text-sm rounded-full border border-amber-200 dark:border-amber-500/20 font-medium">
             Requires React and Tailwind CSS to work properly.
           </div>
         </section>
@@ -70,10 +70,10 @@ export function CardDocs() {
         {/* Usage Section */}
         <section className="space-y-6 ">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
               Usage
             </h2>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Copy and paste the code below to use the Card component in your
               project.
             </p>
@@ -84,10 +84,10 @@ export function CardDocs() {
         {/* Installation/Source Code Section */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
               Installation
             </h2>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Copy the source code below into your components folder to install
               the Card.
             </p>
@@ -99,20 +99,20 @@ export function CardDocs() {
         <section className="space-y-8">
           {/* Heading */}
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
               Card Component — Usage Guide
             </h2>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Follow these steps to use the Card component in your project.
             </p>
           </div>
 
           {/* Step 1 */}
           <div className="space-y-2">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">
               1. Install Tailwind CSS
             </h3>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               This component requires Tailwind CSS.
             </p>
             <a
@@ -127,29 +127,29 @@ export function CardDocs() {
 
           {/* Step 2 */}
           <div className="space-y-2">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">
               2. Copy the Source Code
             </h3>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Create a file in your project and paste the Card component code.
             </p>
 
-            <pre className="bg-slate-900 text-slate-200 text-sm px-3 py-2 rounded-md overflow-x-auto">
+            <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
               <code>/components/Card.jsx</code>
             </pre>
           </div>
 
           {/* Step 3 */}
           <div className="space-y-2">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">
               3. Import and Use the Component
             </h3>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Import the Card component into your file and use it as shown
               below.
             </p>
 
-            <pre className="bg-slate-900 text-slate-200 text-sm px-3 py-2 rounded-md overflow-x-auto">
+            <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
               <code>import {"{ Card }"} from "../components/Card";</code>
             </pre>
 
@@ -158,7 +158,7 @@ export function CardDocs() {
               alias, you can use:
             </p>
 
-            <pre className="bg-slate-900 text-slate-200 text-sm px-3 py-2 rounded-md overflow-x-auto">
+            <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
               <code>import {"{ Card }"} from "@/components/Card";</code>
             </pre>
           </div>
@@ -166,9 +166,9 @@ export function CardDocs() {
           <div className="space-y-4">
             {/* Notes */}
             <div className="space-y-2">
-              <h3 className="text-base font-semibold text-slate-900">Notes</h3>
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Notes</h3>
 
-              <ul className="list-disc pl-5 text-slate-500 space-y-1 text-sm">
+              <ul className="list-disc pl-5 text-slate-500 dark:text-slate-400 space-y-1 text-sm">
                 <li>Requires React + Tailwind CSS</li>
                 <li>
                   Fully customizable via <code>className</code>
@@ -179,9 +179,9 @@ export function CardDocs() {
 
             {/* Tip */}
             <div className="space-y-2">
-              <h3 className="text-base font-semibold text-slate-900">Tip</h3>
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Tip</h3>
 
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
                 Since this is a copy-paste component, you can freely modify it
                 to fit your project—no restrictions.
               </p>

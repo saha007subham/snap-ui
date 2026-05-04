@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #3b82f6; /* blue-500 */
   --color-primary-hover: #2563eb; /* blue-600 */
@@ -13,4 +15,15 @@
   body {
     @apply antialiased text-slate-900 bg-slate-50;
   }
+
+  /* html,
+  body {
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(59, 130, 246, 0.15),
+      #020617 70%
+    );
+    overscroll-behavior: none;
+  } */
 }
