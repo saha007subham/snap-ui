@@ -291,18 +291,6 @@ export function Home() {
         <LightningBolt />
 
         <div className="text-center mb-16 relative z-10">
-          {/* <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="text-slate-900 dark:text-white">
-              Built for developers
-            </span>
-            <br />
-            <span className="relative inline-block mt-2">
-              <span className="bg-teal-400/10 text-teal-400 px-2 py-0.5 relative z-10 rounded-sm">
-                By developers
-              </span>
-              <span className="absolute -right-0.5 top-0.5 bottom-0.5 w-0.5 bg-teal-400 animate-pulse z-20"></span>
-            </span>
-          </h2> */}
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
             Built for developers
             <br />
