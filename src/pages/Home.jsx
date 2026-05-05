@@ -344,6 +344,7 @@ export function Home() {
           </div>
         </div>
       </motion.div>
+      {/* Footer Section */}
       <Footer />
     </div>
   );
