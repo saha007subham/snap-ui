@@ -5,6 +5,7 @@ const navItems = [
   { label: "Card", path: "/components/card" },
   { label: "Button", path: "/components/button" },
   { label: "Input", path: "/components/input" },
+  { label: "CheckBox", path: "/components/checkbox" },
 ];
 
 export function SideBar() {
