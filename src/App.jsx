@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="system">
+    <ThemeProvider defaultTheme="dark">
       <BrowserRouter>
         <div className="relative h-screen w-full bg-[#fafafa] dark:bg-slate-950 transition-colors overflow-hidden">
           {/* Background Glow Effect */}
