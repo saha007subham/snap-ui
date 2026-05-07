@@ -3,6 +3,7 @@ import { Home } from "@/pages/Home";
 import { CardDocs } from "@/pages/CardDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
 import { InputDocs } from "@/pages/InputDocs";
+import { CheckBoxDocs } from "@/pages/CheckBoxDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -31,6 +32,7 @@ function App() {
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />
+                  <Route path="checkbox" element={<CheckBoxDocs />} />
                 </Route>
               </Routes>
             </main>
