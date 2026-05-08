@@ -109,10 +109,12 @@ export function Home() {
               </button>
 
               {/* Secondary CTA */}
-              <button className="px-6 py-3 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-300 dark:hover:text-white transition cursor-pointer font-medium">
-                {/* Documentation */}
-                Explore UI Blocks
-              </button>
+              <div className="relative inline-block overflow-hidden rounded-lg p-[2px]">
+                <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffffff_0%,#3b82f6_50%,#ffffff_100%)] opacity-80"></span>
+                <button className="relative h-full w-full px-6 py-3 rounded-md bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer font-medium">
+                  Explore UI Blocks
+                </button>
+              </div>
             </div>
           </motion.div>
 
