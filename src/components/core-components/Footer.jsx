@@ -18,7 +18,7 @@ const LinkedinIcon = ({ className }) => (
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-slate-200 dark:border-slate-800/60 bg-transparent py-16 mt-12 z-10 relative">
+    <footer className="w-full border-slate-200 dark:border-slate-800/60 bg-transparent py-16 mt-12 z-10 relative">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
         <div className="md:col-span-1">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent mb-4">
@@ -138,7 +138,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800/60 text-center text-sm text-slate-500 dark:text-slate-400">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-slate-200 dark:border-slate-800/60 text-center text-sm text-slate-500 dark:text-slate-400">
         &copy; {new Date().getFullYear()} SnapUI. All rights reserved. Build
         with ❤️ by Subham.
       </div>

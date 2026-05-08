@@ -9,6 +9,7 @@ import imgTestimonials from "../assets/testimonials-dark.png";
 import { motion } from "framer-motion";
 
 import { Footer } from "@/components/core-components/Footer";
+import { TypewriterText } from "@/components/TypewriterText";
 
 const LightningBolt = () => (
   <svg
@@ -63,77 +64,207 @@ export function Home() {
   };
 
   return (
-    <div className="h-full overflow-y-auto transition-colors px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="min-h-[85vh] flex flex-col items-center justify-center py-12"
-      >
-        <div
-          style={{ position: "relative", top: "-90px", right: "60%" }}
-          className="mb-8"
-        >
-          <LightningBolt />
-        </div>
+    <div className="h-full overflow-y-auto transition-colors">
+      <div className="relative min-h-[90vh] flex items-center justify-center w-full border-slate-200 dark:border-slate-800/50 overflow-hidden">
+        {/* Soft glowing gradient effects */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-600/10 dark:bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-3xl text-center">
-          {/* Logo / Product Name */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
+          {/* Left Section: Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
+            <div className="mb-6 relative left-[-20px] lg:left-[-40px]">
+              <LightningBolt />
+            </div>
+
+            {/* Logo / Product Name */}
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent mb-2">
+              SnapUI
+            </h2>
+
+            {/* Tagline */}
+            <p className="text-xl md:text-3xl text-blue-600 dark:text-blue-400 font-medium mb-4 min-h-[36px] md:min-h-[40px]">
+              <TypewriterText text="Build interfaces in a snap." speed={75} />
+            </p>
+
+            {/* Subtext */}
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed">
+              Copy, customize, and ship beautiful React components instantly.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4">
+              {/* Primary CTA */}
+              <button
+                onClick={() => (window.location.href = "/components")}
+                className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition cursor-pointer font-medium"
+              >
+                Explore All Components
+              </button>
+
+              {/* Secondary CTA */}
+              <button className="px-6 py-3 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-300 dark:hover:text-white transition cursor-pointer font-medium">
+                {/* Documentation */}
+                Explore UI Blocks
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Right Section: Code Editor Mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mt-12 lg:mt-0"
+          >
+            {/* Floating Tech Pills */}
+            <div className="absolute -top-6 -left-6 z-20 px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md text-cyan-600 dark:text-cyan-400 text-sm font-mono flex items-center gap-2 animate-[bounce_4s_infinite]">
+              <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></div>{" "}
+              React
+            </div>
+            <div className="absolute top-1/4 -right-8 z-20 px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md text-sky-600 dark:text-sky-400 text-sm font-mono flex items-center gap-2 animate-[bounce_5s_infinite]">
+              <div className="w-2 h-2 rounded-full bg-sky-500 dark:bg-sky-400"></div>{" "}
+              Tailwind
+            </div>
+            <div className="absolute -bottom-6 left-10 z-20 px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md text-yellow-600 dark:text-yellow-400 text-sm font-mono flex items-center gap-2 animate-[bounce_6s_infinite]">
+              <div className="w-2 h-2 rounded-full bg-yellow-500 dark:bg-yellow-400"></div>{" "}
+              JavaScript
+            </div>
+            <div className="absolute bottom-1/4 -left-10 z-20 px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md text-blue-600 dark:text-blue-400 text-sm font-mono flex items-center gap-2 animate-[bounce_4.5s_infinite]">
+              <div className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></div>{" "}
+              TypeScript
+            </div>
+
+            {/* Code Editor Card */}
+            <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-white/80 dark:bg-[#0c0f19]/80 backdrop-blur-xl shadow-2xl overflow-hidden transform perspective-1000 lg:rotateY-[-5deg] lg:rotateX-[5deg] hover:rotate-0 transition-transform duration-500 ease-out">
+              {/* Top Bar */}
+              <div className="flex items-center px-4 py-3 border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-black/40">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <div className="mx-auto text-xs text-slate-500 font-mono">
+                  solution.js
+                </div>
+              </div>
+
+              {/* Fake Code Content */}
+              <div className="p-4 md:p-6 font-mono text-xs md:text-sm leading-loose overflow-x-auto text-slate-700 dark:text-slate-300">
+                <div>
+                  <span className="text-purple-600 dark:text-purple-400">
+                    import
+                  </span>{" "}
+                  {"{"}{" "}
+                  <span className="text-cyan-600 dark:text-cyan-300">
+                    useState
+                  </span>
+                  ,{" "}
+                  <span className="text-cyan-600 dark:text-cyan-300">
+                    useEffect
+                  </span>{" "}
+                  {"}"}{" "}
+                  <span className="text-purple-600 dark:text-purple-400">
+                    from
+                  </span>{" "}
+                  <span className="text-blue-600 dark:text-blue-300">
+                    'react'
+                  </span>
+                  ;
+                </div>
+                <br />
+                <div>
+                  <span className="text-purple-600 dark:text-purple-400">
+                    export function
+                  </span>{" "}
+                  <span className="text-blue-600 dark:text-blue-400">
+                    buildUI
+                  </span>
+                  ({" "}
+                  <span className="text-orange-600 dark:text-orange-300">
+                    components
+                  </span>{" "}
+                  ) {"{"}
+                </div>
+                <div className="pl-4">
+                  <span className="text-purple-600 dark:text-purple-400">
+                    return
+                  </span>{" "}
+                  components.
+                  <span className="text-blue-600 dark:text-blue-400">map</span>
+                  (render);
+                </div>
+                <div>{"}"}</div>
+                <br />
+                <div className="text-slate-500 italic">
+                  // Initialize platform
+                </div>
+                <div>
+                  <span className="text-purple-600 dark:text-purple-400">
+                    const
+                  </span>{" "}
+                  app{" "}
+                  <span className="text-purple-600 dark:text-purple-400">
+                    =
+                  </span>{" "}
+                  <span className="text-blue-600 dark:text-blue-400">
+                    buildUI
+                  </span>
+                  ([
+                </div>
+                <div className="pl-4 text-blue-600 dark:text-blue-300">
+                  'HeroSection'
+                </div>
+                <div className="pl-4 text-blue-600 dark:text-blue-300">
+                  'FeatureGrid'
+                </div>
+                <div className="pl-4 text-blue-600 dark:text-blue-300">
+                  'Testimonials'
+                </div>
+                <div>]);</div>
+                <br />
+                <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                  <span>✓</span> <span>All components loaded successfully</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="relative w-full border-slate-200 dark:border-slate-800/50 overflow-hidden">
+        {/* Soft glowing gradient effects */}
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 dark:bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 dark:bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.9 }}
+          className="relative z-10 min-h-[85vh] flex flex-col items-center justify-center py-12 text-center max-w-5xl mx-auto px-6"
+        >
+          {/* Main Heading */}
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
-            SnapUI
+            Visually Stunning Interfaces
+            <br />
+            With Complete Design Freedom
           </h2>
 
-          {/* Tagline */}
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-4">
-            Build interfaces in a snap.
-          </p>
-
           {/* Subtext */}
-          <p className="text-slate-500 dark:text-slate-400 mb-8">
-            Copy, customize, and ship beautiful React components instantly.
+          <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Create responsive, production-ready interfaces using components
+            designed for performance, accessibility, and easy customization.
           </p>
+        </motion.div>
+      </div>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center justify-center gap-4">
-            {/* Primary CTA */}
-            <button
-              onClick={() => (window.location.href = "/components")}
-              className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition cursor-pointer font-medium"
-            >
-              Explore All Components
-            </button>
-
-            {/* Secondary CTA */}
-            <button className="px-6 py-3 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-300 dark:hover:text-white transition cursor-pointer font-medium">
-              {/* Documentation */}
-              Explore UI Blocks
-            </button>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.9 }}
-        className="min-h-[85vh] flex flex-col items-center justify-center py-12 text-center max-w-5xl mx-auto"
-      >
-        {/* Main Heading */}
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
-          Visually Stunning Interfaces
-          <br />
-          With Complete Design Freedom
-        </h2>
-
-        {/* Subtext */}
-        <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Create responsive, production-ready interfaces using components
-          designed for performance, accessibility, and easy customization.
-        </p>
-      </motion.div>
-
-      <div className="py-24 flex flex-col items-center text-center w-full max-w-7xl mx-auto">
+      <div className="py-24 flex flex-col items-center text-center w-full max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +370,7 @@ export function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
-        className="py-16 flex flex-col items-center justify-center mt-8 mb-24 max-w-6xl mx-auto w-full"
+        className="py-16 flex flex-col items-center justify-center mt-8 mb-24 max-w-6xl mx-auto w-full px-6"
       >
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 w-full px-4 mb-10">
           <img
@@ -287,7 +418,7 @@ export function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.9 }}
-        className="py-24 relative overflow-hidden flex flex-col items-center justify-center w-full max-w-7xl mx-auto"
+        className="py-24 relative overflow-hidden flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6"
       >
         <LightningBolt />
 
