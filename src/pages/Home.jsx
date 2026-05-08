@@ -105,7 +105,8 @@ export function Home() {
 
             {/* Secondary CTA */}
             <button className="px-6 py-3 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-300 dark:hover:text-white transition cursor-pointer font-medium">
-              Documentation
+              {/* Documentation */}
+              Explore UI Blocks
             </button>
           </div>
         </div>

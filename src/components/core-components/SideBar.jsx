@@ -2,10 +2,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { label: "Overview", path: "/" },
-  { label: "Card", path: "/components/card" },
+
+  // Components
   { label: "Button", path: "/components/button" },
-  { label: "Input", path: "/components/input" },
+  { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
+  { label: "Input", path: "/components/input" },
 ];
 
 export function SideBar() {

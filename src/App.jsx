@@ -7,11 +7,13 @@ import { CheckBoxDocs } from "@/pages/CheckBoxDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark">
       <BrowserRouter>
+        <ScrollToTop />
         <div className="relative h-screen w-full bg-[#fafafa] dark:bg-slate-950 transition-colors overflow-hidden">
           {/* Background Glow Effect */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
