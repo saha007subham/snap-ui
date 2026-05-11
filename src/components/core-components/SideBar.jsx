@@ -8,6 +8,7 @@ const navItems = [
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
   { label: "Input", path: "/components/input" },
+  { label: "RadioButton", path: "/components/radiobutton" },
 ];
 
 export function SideBar() {
