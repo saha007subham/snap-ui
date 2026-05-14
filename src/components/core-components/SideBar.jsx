@@ -7,6 +7,7 @@ const navItems = [
   { label: "Button", path: "/components/button" },
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
+  { label: "Checkbox Card", path: "/components/checkboxcard" },
   { label: "Input", path: "/components/input" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },

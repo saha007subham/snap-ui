@@ -4,6 +4,7 @@ import { CardDocs } from "@/pages/CardDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
 import { InputDocs } from "@/pages/InputDocs";
 import { CheckBoxDocs } from "@/pages/CheckBoxDocs";
+import { CheckboxCardDocs } from "@/pages/CheckboxCardDocs";
 import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
 import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
@@ -39,6 +40,7 @@ function App() {
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />
                   <Route path="checkbox" element={<CheckBoxDocs />} />
+                  <Route path="checkboxcard" element={<CheckboxCardDocs />} />
                   <Route path="radiobutton" element={<RadioButtonDocs />} />
                   <Route path="numberfield" element={<NumberFieldDocs />} />
                 </Route>
