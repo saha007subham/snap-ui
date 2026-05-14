@@ -6,6 +6,7 @@ import { InputDocs } from "@/pages/InputDocs";
 import { CheckBoxDocs } from "@/pages/CheckBoxDocs";
 import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
 import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
+import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -32,7 +33,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/components" element={<ComponentDocs />}>
-                  <Route index element={<Navigate to="/components/card" replace />} />
+                  <Route index element={<Navigate to="/components/overview" replace />} />
+                  <Route path="overview" element={<OverviewDocs />} />
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />

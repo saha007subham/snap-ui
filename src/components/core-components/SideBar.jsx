@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
-  { label: "Overview", path: "/" },
+  { label: "Overview", path: "/components/overview" },
 
   // Components
   { label: "Button", path: "/components/button" },
