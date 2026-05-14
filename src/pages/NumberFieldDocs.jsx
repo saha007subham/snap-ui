@@ -1,77 +1,49 @@
 import { Tabs } from "@/components/common/Tabs";
 import { CodeBlock } from "@/components/common/CodeBlock";
-import { RadioButton } from "@/components/ui/RadioButton";
-import { radioButtonUsageCode } from "@/components/code/radioButtonUsageCode";
-import { radioButtonCodeString } from "@/components/code/radioButtonCode";
+import { NumberField } from "@/components/ui/NumberField";
+import { numberFieldUsageCode } from "@/components/code/numberFieldUsageCode";
+import { numberFieldCodeString } from "@/components/code/numberFieldCode";
 
-function RadioButtonUsagePreview() {
+function NumberFieldUsagePreview() {
   return (
     <div className="flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900/50 p-12 rounded-xl border border-slate-200 dark:border-slate-800 shadow-inner w-full">
-      <div className="flex flex-col gap-6">
-        {/* Default RadioButton */}
-        <div className="flex items-center space-x-3">
-          <RadioButton
-            id="preview-radio-1"
-            name="preview-radio"
-            defaultChecked
-          />
-          <label
-            htmlFor="preview-radio-1"
-            className="text-sm font-medium leading-none text-slate-900 dark:text-white cursor-pointer select-none"
-          >
-            Option 1
+      <div className="flex flex-col gap-6 w-full max-w-sm">
+        {/* Default NumberField */}
+        <div className="flex flex-col space-y-2">
+          <label className="text-sm font-medium leading-none text-slate-900 dark:text-white select-none">
+            Quantity
           </label>
+          <NumberField defaultValue={1} min={0} max={10} />
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Min: 0, Max: 10
+          </p>
         </div>
 
-        <div className="flex items-center space-x-3">
-          <RadioButton id="preview-radio-2" name="preview-radio" />
-          <label
-            htmlFor="preview-radio-2"
-            className="text-sm font-medium leading-none text-slate-900 dark:text-white cursor-pointer select-none"
-          >
-            Option 2
+        {/* Disabled NumberField */}
+        <div className="flex flex-col space-y-2">
+          <label className="text-sm font-medium leading-none text-slate-500 dark:text-slate-500 select-none">
+            Disabled Quantity
           </label>
-        </div>
-
-        {/* Disabled RadioButton */}
-        <div className="flex items-center space-x-3">
-          <RadioButton id="disabled-preview" disabled />
-          <label
-            htmlFor="disabled-preview"
-            className="text-sm font-medium leading-none text-slate-500 dark:text-slate-500 cursor-not-allowed select-none"
-          >
-            Disabled radio
-          </label>
-        </div>
-
-        {/* Checked & Disabled RadioButton */}
-        <div className="flex items-center space-x-3">
-          <RadioButton id="checked-disabled-preview" disabled defaultChecked />
-          <label
-            htmlFor="checked-disabled-preview"
-            className="text-sm font-medium leading-none text-slate-500 dark:text-slate-500 cursor-not-allowed select-none"
-          >
-            Checked and Disabled
-          </label>
+          <NumberField defaultValue={5} disabled />
         </div>
       </div>
     </div>
   );
 }
 
-export function RadioButtonDocs() {
+export function NumberFieldDocs() {
   const usageTabs = [
     {
       id: "preview",
       label: "Preview",
-      content: <RadioButtonUsagePreview />,
+      content: <NumberFieldUsagePreview />,
     },
     {
       id: "code",
       label: "Code",
       content: (
         <CodeBlock
-          code={radioButtonUsageCode}
+          code={numberFieldUsageCode}
           language="jsx"
           filename="Example.jsx"
         />
@@ -85,9 +57,9 @@ export function RadioButtonDocs() {
       label: "Source Code",
       content: (
         <CodeBlock
-          code={radioButtonCodeString}
+          code={numberFieldCodeString}
           language="jsx"
-          filename="RadioButton.jsx"
+          filename="NumberField.jsx"
         />
       ),
     },
@@ -99,15 +71,18 @@ export function RadioButtonDocs() {
         {/* Title Section */}
         <section className="space-y-4">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Radio Button Component
+            Number Field Component
           </h1>
           <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl">
-            A control that allows the user to select one option from a set.
-            Built with native HTML input for maximum accessibility.
+            A numeric input component with stepper buttons for incrementing and
+            decrementing values.
           </p>
           <div className="inline-flex gap-3">
             <span className="px-3 py-1 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-400 text-sm rounded-full border border-amber-200 dark:border-amber-500/20 font-medium">
               Requires React and Tailwind CSS
+            </span>
+            <span className="px-3 py-1 bg-blue-50 dark:bg-blue-500/10 text-blue-800 dark:text-blue-400 text-sm rounded-full border border-blue-200 dark:border-blue-500/20 font-medium">
+              Requires lucide-react
             </span>
           </div>
         </section>
@@ -119,7 +94,7 @@ export function RadioButtonDocs() {
               Usage
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
-              Copy and paste the code below to use the RadioButton component in
+              Copy and paste the code below to use the NumberField component in
               your project.
             </p>
           </div>
@@ -134,20 +109,20 @@ export function RadioButtonDocs() {
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
               Copy the source code below into your components folder to install
-              the RadioButton.
+              the NumberField.
             </p>
           </div>
           <Tabs tabs={sourceTabs} />
         </section>
 
-        {/* Steps to use the RadioButton component */}
+        {/* Steps to use the NumberField component */}
         <section className="space-y-8">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-              RadioButton Component — Usage Guide
+              NumberField Component — Usage Guide
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
-              Follow these steps to use the RadioButton component in your
+              Follow these steps to use the NumberField component in your
               project.
             </p>
           </div>
@@ -157,8 +132,12 @@ export function RadioButtonDocs() {
               1. Install Dependencies
             </h3>
             <p className="text-slate-500 dark:text-slate-400">
-              This component requires Tailwind CSS.
+              This component requires Tailwind CSS and lucide-react for the plus
+              and minus icons.
             </p>
+            <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
+              <code>npm install lucide-react</code>
+            </pre>
           </div>
 
           <div className="space-y-2">
@@ -166,11 +145,11 @@ export function RadioButtonDocs() {
               2. Copy the Source Code
             </h3>
             <p className="text-slate-500 dark:text-slate-400">
-              Create a file in your project and paste the RadioButton component
+              Create a file in your project and paste the NumberField component
               code.
             </p>
             <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
-              <code>/components/RadioButton.jsx</code>
+              <code>/components/ui/NumberField.jsx</code>
             </pre>
           </div>
 
@@ -179,11 +158,11 @@ export function RadioButtonDocs() {
               3. Import and Use the Component
             </h3>
             <p className="text-slate-500 dark:text-slate-400">
-              Import the RadioButton component into your file and use it.
+              Import the NumberField component into your file and use it.
             </p>
             <pre className="bg-slate-900 dark:bg-black text-slate-200 dark:text-slate-300 text-sm px-3 py-2 rounded-md overflow-x-auto">
               <code>
-                import {"{ RadioButton }"} from "../components/RadioButton";
+                import {"{ NumberField }"} from "../components/ui/NumberField";
               </code>
             </pre>
           </div>
@@ -196,9 +175,8 @@ export function RadioButtonDocs() {
               <ul className="list-disc pl-5 text-slate-500 dark:text-slate-400 space-y-1 text-sm">
                 <li>
                   Inherits all native input attributes like{" "}
-                  <code>disabled</code>, <code>onChange</code>,{" "}
-                  <code>checked</code>, <code>defaultChecked</code>,{" "}
-                  <code>name</code>, etc.
+                  <code>disabled</code>, <code>onChange</code>, <code>min</code>
+                  , <code>max</code>, <code>step</code>, etc.
                 </li>
                 <li>
                   Fully accessible as it uses standard HTML input semantics
