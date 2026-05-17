@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 import { Footer } from "@/components/core-components/Footer";
 import { TypewriterText } from "@/components/TypewriterText";
+import { useNavigate } from "react-router-dom";
 
 const LightningBolt = () => (
   <svg
@@ -58,13 +59,14 @@ const DiscordIcon = () => (
 );
 
 export function Home() {
+  const navigate = useNavigate();
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <div className="h-full overflow-y-auto transition-colors">
+    <div className="h-full overflow-y-auto bg-transparent w-full">
       <div className="relative min-h-[90vh] flex items-center justify-center w-full border-slate-200 dark:border-slate-800/50 overflow-hidden">
         {/* Soft glowing gradient effects */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
@@ -102,7 +104,7 @@ export function Home() {
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4">
               {/* Primary CTA */}
               <button
-                onClick={() => (window.location.href = "/components")}
+                onClick={() => navigate("/components")}
                 className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition cursor-pointer font-medium"
               >
                 Explore All Components
