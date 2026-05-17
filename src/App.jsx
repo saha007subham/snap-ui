@@ -9,6 +9,7 @@ import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
 import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { SwitchDocs } from "@/pages/SwitchDocs";
 import { SliderDocs } from "@/pages/SliderDocs";
+import { ComboBoxDocs } from "@/pages/ComboBoxDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -47,6 +48,7 @@ function App() {
                   <Route path="numberfield" element={<NumberFieldDocs />} />
                   <Route path="switch" element={<SwitchDocs />} />
                   <Route path="slider" element={<SliderDocs />} />
+                  <Route path="combobox" element={<ComboBoxDocs />} />
                 </Route>
               </Routes>
             </main>
