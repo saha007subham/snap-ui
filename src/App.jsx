@@ -8,6 +8,7 @@ import { CheckboxCardDocs } from "@/pages/CheckboxCardDocs";
 import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
 import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { SwitchDocs } from "@/pages/SwitchDocs";
+import { SliderDocs } from "@/pages/SliderDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -45,6 +46,7 @@ function App() {
                   <Route path="radiobutton" element={<RadioButtonDocs />} />
                   <Route path="numberfield" element={<NumberFieldDocs />} />
                   <Route path="switch" element={<SwitchDocs />} />
+                  <Route path="slider" element={<SliderDocs />} />
                 </Route>
               </Routes>
             </main>

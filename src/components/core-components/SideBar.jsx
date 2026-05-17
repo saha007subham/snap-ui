@@ -11,6 +11,7 @@ const navItems = [
   { label: "Input", path: "/components/input" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
+  { label: "Slider", path: "/components/slider" },
   { label: "Switch", path: "/components/switch" },
 ];
 
