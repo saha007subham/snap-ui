@@ -14,6 +14,7 @@ const navItems = [
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Slider", path: "/components/slider" },
   { label: "Switch", path: "/components/switch" },
+  { label: "Date Picker", path: "/components/datepicker" },
 ];
 
 export function SideBar() {
