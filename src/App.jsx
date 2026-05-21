@@ -10,6 +10,7 @@ import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { SwitchDocs } from "@/pages/SwitchDocs";
 import { SliderDocs } from "@/pages/SliderDocs";
 import { ComboBoxDocs } from "@/pages/ComboBoxDocs";
+import { DatePickerDocs } from "@/pages/DatePickerDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -36,8 +37,11 @@ function App() {
             <main className="flex-1 flex flex-col min-h-0">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/components" element={<ComponentDocs />}>
-                  <Route index element={<Navigate to="/components/overview" replace />} />
+                <Route path="/components/*" element={<ComponentDocs />}>
+                  <Route
+                    index
+                    element={<Navigate to="/components/overview" replace />}
+                  />
                   <Route path="overview" element={<OverviewDocs />} />
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
@@ -49,6 +53,11 @@ function App() {
                   <Route path="switch" element={<SwitchDocs />} />
                   <Route path="slider" element={<SliderDocs />} />
                   <Route path="combobox" element={<ComboBoxDocs />} />
+                  <Route path="datepicker" element={<DatePickerDocs />} />
+                  <Route
+                    path="*"
+                    element={<Navigate to="/components/overview" replace />}
+                  />
                 </Route>
               </Routes>
             </main>
