@@ -35,17 +35,30 @@ export function Header() {
 
         {/* Right Section: Icons */}
         <div className="flex items-center gap-2 sm:gap-4">
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 cursor-pointer"
-            aria-label="Toggle dark mode"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
+          <div className="relative inline-flex items-center group">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="flex h-9 w-9 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 cursor-pointer"
+              aria-label="Toggle dark mode"
+              aria-describedby="theme-tooltip"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
+
+            <div className="pointer-events-none absolute right-[-60px] top-full mt-3 z-10 w-[240px] max-w-[calc(100vw-2rem)] rounded-xl border border-slate-200 bg-white/95 px-4 py-3 text-left text-sm text-slate-900 shadow-xl shadow-slate-900/5 backdrop-blur-xl opacity-0 scale-95 transition-all duration-200 ease-out dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-100 group-hover:opacity-100 group-hover:scale-100 group-focus-within:opacity-100 group-focus-within:scale-100">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                {theme === "dark"
+                  ? "Switch to light theme, Your choice is saved on this device."
+                  : "Switch to dark theme, Your choice is saved on this device."}
+              </p>
+              {/* <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 border-x-8 border-x-transparent border-b-8 border-b-slate-200 dark:border-b-slate-800" /> */}
+            </div>
+          </div>
+
           <a
             href="https://github.com/saha007subham/snap-ui"
             target="_blank"

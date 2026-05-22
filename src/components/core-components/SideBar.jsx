@@ -3,18 +3,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 const navItems = [
   { label: "Overview", path: "/components/overview" },
 
-  // Components
+  // Components (Alphabetically Sorted)
   { label: "Button", path: "/components/button" },
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
   { label: "Checkbox Card", path: "/components/checkboxcard" },
   { label: "ComboBox", path: "/components/combobox" },
+  { label: "Date Picker", path: "/components/datepicker" },
   { label: "Input", path: "/components/input" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Slider", path: "/components/slider" },
   { label: "Switch", path: "/components/switch" },
-  { label: "Date Picker", path: "/components/datepicker" },
 ];
 
 export function SideBar() {
