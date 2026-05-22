@@ -5,8 +5,145 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SnapUI: Modern React Component Platform</title>
+    <style>
+      /* Initial loader + background styles to prevent white flash */
+      :root {
+        --initial-bg: #f8fafc;
+        --initial-text: #0f172a;
+        --loader-color: #3b82f6;
+      }
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--initial-bg);
+        color: var(--initial-text);
+        z-index: 9999;
+        transition:
+          opacity 0.28s ease,
+          visibility 0.28s ease,
+          transform 0.28s ease;
+      }
+      #initial-loader.hide {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.98);
+      }
+      .initial-loader-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        height: auto;
+        line-height: 1.25;
+        /* Match project font stack for consistency before Tailwind loads */
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          "Noto Sans",
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+      .initial-loader-title {
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .initial-loader-sub {
+        font-size: 13px;
+        opacity: 0.78;
+      }
+      .initial-spinner {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 6px solid rgba(0, 0, 0, 0.08);
+        border-top-color: var(--loader-color);
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      /* dark panel fallback - panel is transparent, so these are no-ops but kept for future use */
+      .dark #initial-loader .initial-loader-panel {
+        background: transparent;
+        box-shadow: none;
+      }
+      .dark #initial-loader {
+        color: var(--initial-text);
+      }
+    </style>
   </head>
   <body>
+    <script>
+      // Pre-mount theme resolution: set html class and initial CSS vars
+      (function () {
+        try {
+          var storageKey = "snapui-theme";
+          var theme = localStorage.getItem(storageKey) || "system";
+          var resolved = theme;
+          if (theme === "system") {
+            resolved = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          document.documentElement.classList.add(resolved);
+          if (resolved === "dark") {
+            document.documentElement.style.setProperty(
+              "--initial-bg",
+              "#0f172a",
+            );
+            document.documentElement.style.setProperty(
+              "--initial-text",
+              "#e6edf3",
+            );
+            document.documentElement.style.setProperty(
+              "--loader-color",
+              "#60a5fa",
+            );
+          } else {
+            document.documentElement.style.setProperty(
+              "--initial-bg",
+              "#f8fafc",
+            );
+            document.documentElement.style.setProperty(
+              "--initial-text",
+              "#0f172a",
+            );
+            document.documentElement.style.setProperty(
+              "--loader-color",
+              "#3b82f6",
+            );
+          }
+          if (document.body)
+            document.body.style.background = "var(--initial-bg)";
+        } catch (e) {
+          /* no-op */
+        }
+      })();
+    </script>
+
+    <!-- Initial loader to avoid white flicker while React mounts -->
+    <div id="initial-loader" role="status" aria-hidden="false">
+      <div class="initial-loader-panel">
+        <div class="initial-spinner" aria-hidden="true"></div>
+        <div class="initial-loader-title">Good things take a second.</div>
+        <div class="initial-loader-sub">We’re almost there.</div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
