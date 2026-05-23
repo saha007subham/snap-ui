@@ -8,6 +8,7 @@ const navItems = [
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
   { label: "Checkbox Card", path: "/components/checkboxcard" },
+  { label: "Colour Picker", path: "/components/colourpicker" },
   { label: "ComboBox", path: "/components/combobox" },
   { label: "Date Picker", path: "/components/datepicker" },
   { label: "Input", path: "/components/input" },

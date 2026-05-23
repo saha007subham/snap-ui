@@ -10,6 +10,7 @@ import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { SwitchDocs } from "@/pages/SwitchDocs";
 import { SliderDocs } from "@/pages/SliderDocs";
 import { ComboBoxDocs } from "@/pages/ComboBoxDocs";
+import { ColourPickerDocs } from "@/pages/ColourPickerDocs";
 import { DatePickerDocs } from "@/pages/DatePickerDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
@@ -53,6 +54,7 @@ function App() {
                   <Route path="switch" element={<SwitchDocs />} />
                   <Route path="slider" element={<SliderDocs />} />
                   <Route path="combobox" element={<ComboBoxDocs />} />
+                  <Route path="colourpicker" element={<ColourPickerDocs />} />
                   <Route path="datepicker" element={<DatePickerDocs />} />
                   <Route
                     path="*"
