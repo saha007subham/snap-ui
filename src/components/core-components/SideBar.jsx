@@ -12,6 +12,7 @@ const navItems = [
   { label: "ComboBox", path: "/components/combobox" },
   { label: "Date Picker", path: "/components/datepicker" },
   { label: "Input", path: "/components/input" },
+  { label: "Password Input", path: "/components/passwordinput" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Slider", path: "/components/slider" },

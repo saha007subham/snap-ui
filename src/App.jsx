@@ -3,6 +3,7 @@ import { Home } from "@/pages/Home";
 import { CardDocs } from "@/pages/CardDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
 import { InputDocs } from "@/pages/InputDocs";
+import { PasswordInputDocs } from "@/pages/PasswordInputDocs";
 import { CheckBoxDocs } from "@/pages/CheckBoxDocs";
 import { CheckboxCardDocs } from "@/pages/CheckboxCardDocs";
 import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
@@ -47,6 +48,7 @@ function App() {
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />
+                  <Route path="passwordinput" element={<PasswordInputDocs />} />
                   <Route path="checkbox" element={<CheckBoxDocs />} />
                   <Route path="checkboxcard" element={<CheckboxCardDocs />} />
                   <Route path="radiobutton" element={<RadioButtonDocs />} />
