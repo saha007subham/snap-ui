@@ -13,6 +13,7 @@ import { SliderDocs } from "@/pages/SliderDocs";
 import { ComboBoxDocs } from "@/pages/ComboBoxDocs";
 import { ColourPickerDocs } from "@/pages/ColourPickerDocs";
 import { DatePickerDocs } from "@/pages/DatePickerDocs";
+import { FileUploadDocs } from "@/pages/FileUploadDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -58,6 +59,7 @@ function App() {
                   <Route path="combobox" element={<ComboBoxDocs />} />
                   <Route path="colourpicker" element={<ColourPickerDocs />} />
                   <Route path="datepicker" element={<DatePickerDocs />} />
+                  <Route path="fileupload" element={<FileUploadDocs />} />
                   <Route
                     path="*"
                     element={<Navigate to="/components/overview" replace />}

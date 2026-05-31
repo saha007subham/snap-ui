@@ -11,6 +11,7 @@ const navItems = [
   { label: "Colour Picker", path: "/components/colourpicker" },
   { label: "ComboBox", path: "/components/combobox" },
   { label: "Date Picker", path: "/components/datepicker" },
+  { label: "File Upload", path: "/components/fileupload" },
   { label: "Input", path: "/components/input" },
   { label: "Password Input", path: "/components/passwordinput" },
   { label: "Number Field", path: "/components/numberfield" },
