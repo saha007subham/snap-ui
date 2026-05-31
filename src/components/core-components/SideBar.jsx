@@ -14,6 +14,7 @@ const navItems = [
   { label: "File Upload", path: "/components/fileupload" },
   { label: "Input", path: "/components/input" },
   { label: "Password Input", path: "/components/passwordinput" },
+  { label: "Pin Input", path: "/components/pininput" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Slider", path: "/components/slider" },
