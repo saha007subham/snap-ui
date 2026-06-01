@@ -15,6 +15,7 @@ import { ColourPickerDocs } from "@/pages/ColourPickerDocs";
 import { DatePickerDocs } from "@/pages/DatePickerDocs";
 import { FileUploadDocs } from "@/pages/FileUploadDocs";
 import { PinInputDocs } from "@/pages/PinInputDocs";
+import { StarRatingDocs } from "@/pages/StarRatingDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -57,6 +58,7 @@ function App() {
                   <Route path="numberfield" element={<NumberFieldDocs />} />
                   <Route path="switch" element={<SwitchDocs />} />
                   <Route path="slider" element={<SliderDocs />} />
+                  <Route path="starrating" element={<StarRatingDocs />} />
                   <Route path="combobox" element={<ComboBoxDocs />} />
                   <Route path="colourpicker" element={<ColourPickerDocs />} />
                   <Route path="datepicker" element={<DatePickerDocs />} />

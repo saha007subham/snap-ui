@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navItems = [
   { label: "Overview", path: "/components/overview" },
@@ -18,13 +18,11 @@ const navItems = [
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Slider", path: "/components/slider" },
+  { label: "Star Rating", path: "/components/starrating" },
   { label: "Switch", path: "/components/switch" },
 ];
 
 export function SideBar() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
   return (
     <aside className="h-full px-4 py-6">
       {/* Title */}
@@ -34,24 +32,21 @@ export function SideBar() {
 
       {/* Navigation */}
       <nav className="space-y-1">
-        {navItems.map((item) => {
-          const isActive = location.pathname === item.path;
-
-          return (
-            <button
-              key={item.path}
-              onClick={() => navigate(item.path)}
-              className={`w-full text-left px-3 py-2 rounded-md text-sm transition font-medium
-    ${
-      isActive
-        ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-        : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white"
-    } cursor-pointer`}
-            >
-              {item.label}
-            </button>
-          );
-        })}
+        {navItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            className={({ isActive }) =>
+              `w-full block text-left px-3 py-2 rounded-md text-sm transition font-medium ${
+                isActive
+                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
+                  : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white"
+              } cursor-pointer`
+            }
+          >
+            {item.label}
+          </NavLink>
+        ))}
       </nav>
     </aside>
   );
