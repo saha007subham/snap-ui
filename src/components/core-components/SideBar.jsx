@@ -33,7 +33,7 @@ export function SideBar() {
       </h2>
 
       {/* Navigation */}
-      <nav className="space-y-1">
+      <nav className="space-y-1 pb-10">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
