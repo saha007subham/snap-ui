@@ -17,6 +17,7 @@ import { DatePickerDocs } from "@/pages/DatePickerDocs";
 import { FileUploadDocs } from "@/pages/FileUploadDocs";
 import { PinInputDocs } from "@/pages/PinInputDocs";
 import { StarRatingDocs } from "@/pages/StarRatingDocs";
+import { TagsInputDocs } from "@/pages/TagsInputDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -66,6 +67,7 @@ function App() {
                   <Route path="datepicker" element={<DatePickerDocs />} />
                   <Route path="fileupload" element={<FileUploadDocs />} />
                   <Route path="pininput" element={<PinInputDocs />} />
+                  <Route path="tagsinput" element={<TagsInputDocs />} />
                   <Route
                     path="*"
                     element={<Navigate to="/components/overview" replace />}

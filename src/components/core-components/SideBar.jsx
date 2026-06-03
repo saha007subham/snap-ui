@@ -21,6 +21,7 @@ const navItems = [
   { label: "Slider", path: "/components/slider" },
   { label: "Star Rating", path: "/components/starrating" },
   { label: "Switch", path: "/components/switch" },
+  { label: "Tags Input", path: "/components/tagsinput" },
 ];
 
 export function SideBar() {
