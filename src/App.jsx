@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "@/pages/Home";
 import { CardDocs } from "@/pages/CardDocs";
+import { AccordionDocs } from "@/pages/AccordionDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
 import { InputDocs } from "@/pages/InputDocs";
 import { PasswordInputDocs } from "@/pages/PasswordInputDocs";
@@ -48,6 +49,7 @@ function App() {
                     element={<Navigate to="/components/overview" replace />}
                   />
                   <Route path="overview" element={<OverviewDocs />} />
+                  <Route path="accordion" element={<AccordionDocs />} />
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />

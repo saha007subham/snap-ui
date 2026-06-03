@@ -4,6 +4,7 @@ const navItems = [
   { label: "Overview", path: "/components/overview" },
 
   // Components (Alphabetically Sorted)
+  { label: "Accordion", path: "/components/accordion" },
   { label: "Button", path: "/components/button" },
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
