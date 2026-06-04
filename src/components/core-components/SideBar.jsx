@@ -18,6 +18,7 @@ const navItems = [
   { label: "Pin Input", path: "/components/pininput" },
   { label: "Number Field", path: "/components/numberfield" },
   { label: "Radio Button", path: "/components/radiobutton" },
+  { label: "Segmented Control", path: "/components/segmentedcontrol" },
   { label: "Slider", path: "/components/slider" },
   { label: "Star Rating", path: "/components/starrating" },
   { label: "Switch", path: "/components/switch" },
