@@ -19,6 +19,7 @@ import { PinInputDocs } from "@/pages/PinInputDocs";
 import { StarRatingDocs } from "@/pages/StarRatingDocs";
 import { TagsInputDocs } from "@/pages/TagsInputDocs";
 import { SegmentedControlDocs } from "@/pages/SegmentedControlDocs";
+import { LoadingSpinnerDocs } from "@/pages/LoadingSpinnerDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
 import { Header } from "@/components/core-components/Header";
@@ -55,6 +56,7 @@ function App() {
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />
+                  <Route path="loadingspinner" element={<LoadingSpinnerDocs />} />
                   <Route path="passwordinput" element={<PasswordInputDocs />} />
                   <Route path="checkbox" element={<CheckBoxDocs />} />
                   <Route path="checkboxcard" element={<CheckboxCardDocs />} />

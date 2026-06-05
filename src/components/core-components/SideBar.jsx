@@ -14,6 +14,7 @@ const navItems = [
   { label: "Date Picker", path: "/components/datepicker" },
   { label: "File Upload", path: "/components/fileupload" },
   { label: "Input", path: "/components/input" },
+  { label: "Loading Spinner", path: "/components/loadingspinner" },
   { label: "Password Input", path: "/components/passwordinput" },
   { label: "Pin Input", path: "/components/pininput" },
   { label: "Number Field", path: "/components/numberfield" },
