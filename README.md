@@ -6,7 +6,7 @@ Build beautiful, responsive user interfaces faster with modern copy-paste React 
 
 ## 🌐 Live Demo
 
-🔗 https://your-vercel-link.vercel.app
+🔗 https://snap-ui-two.vercel.app/
 
 ---
 
