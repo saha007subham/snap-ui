@@ -6,7 +6,9 @@ import imgPricing from "../assets/pricing-dark.png";
 import imgStats from "../assets/stats-sections-dark.png";
 import imgTeam from "../assets/team-sections-dark.png";
 import imgTestimonials from "../assets/testimonials-dark.png";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Layers, Sparkles } from "lucide-react";
 
 import { Footer } from "@/components/core-components/Footer";
 import { TypewriterText } from "@/components/TypewriterText";
@@ -60,6 +62,28 @@ const DiscordIcon = () => (
 
 export function Home() {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+    if (isModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isModalOpen]);
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -113,7 +137,10 @@ export function Home() {
               {/* Secondary CTA */}
               <div className="relative inline-block overflow-hidden rounded-lg p-[2px]">
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffffff_0%,#3b82f6_50%,#ffffff_100%)] opacity-80"></span>
-                <button className="relative h-full w-full px-6 py-3 rounded-md bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer font-medium">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="relative h-full w-full px-6 py-3 rounded-md bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer font-medium"
+                >
                   Explore UI Blocks
                 </button>
               </div>
@@ -470,6 +497,89 @@ export function Home() {
       </motion.div>
       {/* Footer Section */}
       <Footer />
+
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeModal}
+              className="fixed inset-0 bg-slate-950/60 dark:bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ type: "spring", duration: 0.5, bounce: 0.15 }}
+              className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-[#070913]/95 backdrop-blur-xl p-8 shadow-2xl z-10 flex flex-col items-center text-center"
+            >
+              {/* Background glows inside modal */}
+              <div className="absolute -top-20 -left-20 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-full transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Icon / Decorative Header */}
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-2xl blur-md opacity-25 animate-[pulse_3s_infinite]" />
+                <div className="relative flex items-center justify-center w-16 h-16 rounded-2xl border border-blue-500/30 dark:border-blue-400/20 bg-gradient-to-tr from-blue-500/10 to-cyan-500/10 text-blue-600 dark:text-blue-400">
+                  <Layers className="w-8 h-8" />
+                </div>
+              </div>              {/* Badge */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 dark:border-blue-400/20 mb-3">
+                <Sparkles className="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" />
+                Coming Soon
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-blue-600 to-cyan-600 dark:from-white dark:via-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-4">
+                UI Blocks Are Coming Soon
+              </h3>
+
+              {/* Description */}
+              <div className="space-y-4 text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-8 max-w-sm">
+                <p>
+                  We're carefully designing reusable page sections that work seamlessly together, so you can go from idea to production in minutes.
+                </p>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-500 font-medium">
+                  Until then, explore our component library and start building beautiful interfaces today.
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+                <button
+                  onClick={() => {
+                    closeModal();
+                    navigate("/components");
+                  }}
+                  className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-colors cursor-pointer shadow-lg shadow-blue-500/25 dark:shadow-blue-500/15"
+                >
+                  Continue Exploring
+                </button>
+                <button
+                  onClick={closeModal}
+                  className="w-full sm:w-auto px-6 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-semibold transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
