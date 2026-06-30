@@ -8,9 +8,23 @@
     <style>
       /* Initial loader + background styles to prevent white flash */
       :root {
-        --initial-bg: #f8fafc;
+        --initial-bg: #fafafa;
         --initial-text: #0f172a;
         --loader-color: #3b82f6;
+      }
+      /* Dark theme variables matching app's background (slate-950) */
+      html.dark {
+        --initial-bg: #020617;
+        --initial-text: #f8fafc;
+        --loader-color: #60a5fa;
+      }
+      html, body {
+        background-color: var(--initial-bg);
+        color: var(--initial-text);
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
       }
       #initial-loader {
         position: fixed;
@@ -43,7 +57,6 @@
         width: auto;
         height: auto;
         line-height: 1.25;
-        /* Match project font stack for consistency before Tailwind loads */
         font-family:
           ui-sans-serif,
           system-ui,
@@ -77,7 +90,6 @@
           transform: rotate(360deg);
         }
       }
-      /* dark panel fallback - panel is transparent, so these are no-ops but kept for future use */
       .dark #initial-loader .initial-loader-panel {
         background: transparent;
         box-shadow: none;
@@ -86,10 +98,8 @@
         color: var(--initial-text);
       }
     </style>
-  </head>
-  <body>
     <script>
-      // Pre-mount theme resolution: set html class and initial CSS vars
+      // Pre-mount theme resolution: set html class immediately to avoid white flash
       (function () {
         try {
           var storageKey = "snapui-theme";
@@ -101,40 +111,13 @@
               : "light";
           }
           document.documentElement.classList.add(resolved);
-          if (resolved === "dark") {
-            document.documentElement.style.setProperty(
-              "--initial-bg",
-              "#0f172a",
-            );
-            document.documentElement.style.setProperty(
-              "--initial-text",
-              "#e6edf3",
-            );
-            document.documentElement.style.setProperty(
-              "--loader-color",
-              "#60a5fa",
-            );
-          } else {
-            document.documentElement.style.setProperty(
-              "--initial-bg",
-              "#f8fafc",
-            );
-            document.documentElement.style.setProperty(
-              "--initial-text",
-              "#0f172a",
-            );
-            document.documentElement.style.setProperty(
-              "--loader-color",
-              "#3b82f6",
-            );
-          }
-          if (document.body)
-            document.body.style.background = "var(--initial-bg)";
         } catch (e) {
           /* no-op */
         }
       })();
     </script>
+  </head>
+  <body>
 
     <!-- Initial loader to avoid white flicker while React mounts -->
     <div id="initial-loader" role="status" aria-hidden="false">
