@@ -5,6 +5,7 @@ const navItems = [
 
   // Components (Alphabetically Sorted)
   { label: "Accordion", path: "/components/accordion" },
+  { label: "Autocomplete Search", path: "/components/autocompletesearch" },
   { label: "Button", path: "/components/button" },
   { label: "Card", path: "/components/card" },
   { label: "CheckBox", path: "/components/checkbox" },
