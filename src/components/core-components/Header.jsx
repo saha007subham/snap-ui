@@ -1,9 +1,33 @@
+import { useState, useEffect } from "react";
 import { Search, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@/components/ThemeProvider";
+import { AnimatePresence } from "framer-motion";
+import { SearchModal } from "@/components/core-components/SearchModal";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMac, setIsMac] = useState(true);
+
+  useEffect(() => {
+    // Detect OS for shortcut hint
+    const isMacPlatform = typeof navigator !== "undefined" && 
+      (/Mac|iPod|iPhone|iPad/.test(navigator.platform) || 
+       (navigator.userAgentData && navigator.userAgentData.platform === "macOS") ||
+       /Mac/.test(navigator.userAgent));
+    setIsMac(isMacPlatform);
+
+    // Global keyboard listener for search shortcut
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsSearchOpen((open) => !open);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/40 backdrop-blur-lg transition-colors">
@@ -18,19 +42,23 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Middle Section: Search Bar */}
+        {/* Middle Section: Search Trigger */}
         <div className="flex flex-1 items-center justify-center px-4 sm:px-8">
-          <div className="relative w-full max-w-md">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-              <Search className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className="flex w-full max-w-md items-center justify-between rounded-full border border-slate-300 dark:border-slate-800 bg-slate-50 hover:bg-slate-100/50 dark:bg-slate-900 dark:hover:bg-slate-900/80 py-2 pl-4 pr-3 text-sm text-slate-400 dark:text-slate-500 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/20 hover:border-slate-400 dark:hover:border-slate-700 cursor-pointer group"
+            aria-label="Open search dialog"
+          >
+            <div className="flex items-center gap-2.5">
+              <Search className="h-4 w-4 text-slate-400 dark:text-slate-500 group-hover:text-slate-500 dark:group-hover:text-slate-400 transition-colors shrink-0" />
+              <span className="text-left font-medium select-none truncate">Search documentation...</span>
             </div>
-            <input
-              type="text"
-              placeholder="Search components..."
-              className="block w-full rounded-full border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 py-2 pl-10 pr-4 text-sm text-slate-900 dark:text-slate-100 transition-colors focus:border-blue-500 dark:focus:border-blue-500 focus:bg-white dark:focus:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-              aria-label="Search components"
-            />
-          </div>
+            
+            <div className="hidden md:flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-200/50 border border-slate-300/30 text-slate-500 dark:bg-slate-800 dark:border-slate-700/50 dark:text-slate-400 text-[10px] font-semibold tracking-tight shadow-sm shrink-0">
+              <span>{isMac ? "⌘" : "Ctrl"}</span>
+              <span>K</span>
+            </div>
+          </button>
         </div>
 
         {/* Right Section: Icons */}
@@ -55,7 +83,6 @@ export function Header() {
                   ? "Switch to light theme, Your choice is saved on this device."
                   : "Switch to dark theme, Your choice is saved on this device."}
               </p>
-              {/* <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 border-x-8 border-x-transparent border-b-8 border-b-slate-200 dark:border-b-slate-800" /> */}
             </div>
           </div>
 
@@ -76,6 +103,16 @@ export function Header() {
           </a>
         </div>
       </div>
+
+      {/* Global Search command palette */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <SearchModal
+            isOpen={isSearchOpen}
+            onClose={() => setIsSearchOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }
