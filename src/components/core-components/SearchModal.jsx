@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -368,7 +369,7 @@ export function SearchModal({ isOpen, onClose }) {
   // Track categories to render category section titles in the results list
   let lastCategory = null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[10vh] px-4 overflow-y-auto"
       role="dialog"
@@ -493,6 +494,7 @@ export function SearchModal({ isOpen, onClose }) {
           </div>
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body
   );
 }
