@@ -302,6 +302,15 @@ export const docsRegistry = [
     ],
   },
   {
+    id: "progressbar",
+    title: "Progress Bar",
+    description:
+      "A simple, accessible progress indicator for loading states, uploads, and task completion.",
+    category: "Components",
+    path: "/components/progressbar",
+    keywords: ["progress", "bar", "loading", "upload", "task", "indicator"],
+  },
+  {
     id: "radiobutton",
     title: "Radio Button",
     description:
@@ -350,15 +359,6 @@ export const docsRegistry = [
       "max",
       "value selector",
     ],
-  },
-  {
-    id: "progressbar",
-    title: "Progress Bar",
-    description:
-      "A simple, accessible progress indicator for loading states, uploads, and task completion.",
-    category: "Components",
-    path: "/components/progressbar",
-    keywords: ["progress", "bar", "loading", "upload", "task", "indicator"],
   },
   {
     id: "starrating",

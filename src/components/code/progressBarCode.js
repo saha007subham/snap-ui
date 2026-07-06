@@ -34,7 +34,7 @@ export function ProgressBar({
       {(label || showValue) && (
         <div className="mb-2 flex items-center justify-between gap-3">
           {label ? <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{label}</span> : <span />}
-          {showValue ? <span className="text-sm text-slate-500 dark:text-slate-400">{\`${Math.round(percentage)}%\`}</span> : null}
+          {showValue ? <span className="text-sm text-slate-500 dark:text-slate-400">{\`\${Math.round(percentage)}%\`}</span> : null}
         </div>
       )}
 
@@ -54,7 +54,7 @@ export function ProgressBar({
             indeterminate && "w-full animate-pulse",
             barClassName
           )}
-          style={indeterminate ? undefined : { width: \`${percentage}%\` }}
+          style={indeterminate ? undefined : { width: \`\${percentage}%\` }}
         />
       </div>
     </div>
