@@ -12,6 +12,7 @@ import { RadioButtonDocs } from "@/pages/RadioButtonDocs";
 import { NumberFieldDocs } from "@/pages/NumberFieldDocs";
 import { SwitchDocs } from "@/pages/SwitchDocs";
 import { SliderDocs } from "@/pages/SliderDocs";
+import { ProgressBarDocs } from "@/pages/ProgressBarDocs";
 import { ComboBoxDocs } from "@/pages/ComboBoxDocs";
 import { ColourPickerDocs } from "@/pages/ColourPickerDocs";
 import { DatePickerDocs } from "@/pages/DatePickerDocs";
@@ -54,11 +55,17 @@ function App() {
                   />
                   <Route path="overview" element={<OverviewDocs />} />
                   <Route path="accordion" element={<AccordionDocs />} />
-                  <Route path="autocompletesearch" element={<AutocompleteSearchDocs />} />
+                  <Route
+                    path="autocompletesearch"
+                    element={<AutocompleteSearchDocs />}
+                  />
                   <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
                   <Route path="input" element={<InputDocs />} />
-                  <Route path="loadingspinner" element={<LoadingSpinnerDocs />} />
+                  <Route
+                    path="loadingspinner"
+                    element={<LoadingSpinnerDocs />}
+                  />
                   <Route path="passwordinput" element={<PasswordInputDocs />} />
                   <Route path="checkbox" element={<CheckBoxDocs />} />
                   <Route path="checkboxcard" element={<CheckboxCardDocs />} />
@@ -66,6 +73,7 @@ function App() {
                   <Route path="numberfield" element={<NumberFieldDocs />} />
                   <Route path="switch" element={<SwitchDocs />} />
                   <Route path="slider" element={<SliderDocs />} />
+                  <Route path="progressbar" element={<ProgressBarDocs />} />
                   <Route path="starrating" element={<StarRatingDocs />} />
                   <Route path="combobox" element={<ComboBoxDocs />} />
                   <Route path="colourpicker" element={<ColourPickerDocs />} />
@@ -73,7 +81,10 @@ function App() {
                   <Route path="fileupload" element={<FileUploadDocs />} />
                   <Route path="pininput" element={<PinInputDocs />} />
                   <Route path="tagsinput" element={<TagsInputDocs />} />
-                  <Route path="segmentedcontrol" element={<SegmentedControlDocs />} />
+                  <Route
+                    path="segmentedcontrol"
+                    element={<SegmentedControlDocs />}
+                  />
                   <Route
                     path="*"
                     element={<Navigate to="/components/overview" replace />}
