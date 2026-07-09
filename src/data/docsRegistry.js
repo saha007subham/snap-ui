@@ -361,6 +361,28 @@ export const docsRegistry = [
     ],
   },
   {
+    id: "socialbutton",
+    title: "Social Button",
+    description:
+      "Fully customizable auth & share buttons matching the brand design languages of top platforms.",
+    category: "Components",
+    path: "/components/socialbutton",
+    keywords: [
+      "social",
+      "button",
+      "google",
+      "github",
+      "apple",
+      "twitter",
+      "x",
+      "facebook",
+      "auth",
+      "login",
+      "share",
+      "sign in",
+    ],
+  },
+  {
     id: "starrating",
     title: "Star Rating",
     description:

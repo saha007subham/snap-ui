@@ -23,6 +23,7 @@ const navItems = [
   { label: "Radio Button", path: "/components/radiobutton" },
   { label: "Segmented Control", path: "/components/segmentedcontrol" },
   { label: "Slider", path: "/components/slider" },
+  { label: "Social Button", path: "/components/socialbutton" },
   { label: "Star Rating", path: "/components/starrating" },
   { label: "Switch", path: "/components/switch" },
   { label: "Tags Input", path: "/components/tagsinput" },

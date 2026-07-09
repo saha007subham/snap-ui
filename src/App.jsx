@@ -21,6 +21,7 @@ import { PinInputDocs } from "@/pages/PinInputDocs";
 import { StarRatingDocs } from "@/pages/StarRatingDocs";
 import { TagsInputDocs } from "@/pages/TagsInputDocs";
 import { SegmentedControlDocs } from "@/pages/SegmentedControlDocs";
+import { SocialButtonDocs } from "@/pages/SocialButtonDocs";
 import { LoadingSpinnerDocs } from "@/pages/LoadingSpinnerDocs";
 import { OverviewDocs } from "@/pages/OverviewDocs";
 import { ComponentDocs } from "./pages/ComponentDocs";
@@ -75,6 +76,7 @@ function App() {
                   <Route path="slider" element={<SliderDocs />} />
                   <Route path="progressbar" element={<ProgressBarDocs />} />
                   <Route path="starrating" element={<StarRatingDocs />} />
+                  <Route path="socialbutton" element={<SocialButtonDocs />} />
                   <Route path="combobox" element={<ComboBoxDocs />} />
                   <Route path="colourpicker" element={<ColourPickerDocs />} />
                   <Route path="datepicker" element={<DatePickerDocs />} />
