@@ -60,33 +60,33 @@ function App() {
                     path="autocompletesearch"
                     element={<AutocompleteSearchDocs />}
                   />
-                  <Route path="card" element={<CardDocs />} />
                   <Route path="button" element={<ButtonDocs />} />
+                  <Route path="card" element={<CardDocs />} />
+                  <Route path="checkbox" element={<CheckBoxDocs />} />
+                  <Route path="checkboxcard" element={<CheckboxCardDocs />} />
+                  <Route path="colourpicker" element={<ColourPickerDocs />} />
+                  <Route path="combobox" element={<ComboBoxDocs />} />
+                  <Route path="datepicker" element={<DatePickerDocs />} />
+                  <Route path="fileupload" element={<FileUploadDocs />} />
                   <Route path="input" element={<InputDocs />} />
                   <Route
                     path="loadingspinner"
                     element={<LoadingSpinnerDocs />}
                   />
-                  <Route path="passwordinput" element={<PasswordInputDocs />} />
-                  <Route path="checkbox" element={<CheckBoxDocs />} />
-                  <Route path="checkboxcard" element={<CheckboxCardDocs />} />
-                  <Route path="radiobutton" element={<RadioButtonDocs />} />
                   <Route path="numberfield" element={<NumberFieldDocs />} />
-                  <Route path="switch" element={<SwitchDocs />} />
-                  <Route path="slider" element={<SliderDocs />} />
-                  <Route path="progressbar" element={<ProgressBarDocs />} />
-                  <Route path="starrating" element={<StarRatingDocs />} />
-                  <Route path="socialbutton" element={<SocialButtonDocs />} />
-                  <Route path="combobox" element={<ComboBoxDocs />} />
-                  <Route path="colourpicker" element={<ColourPickerDocs />} />
-                  <Route path="datepicker" element={<DatePickerDocs />} />
-                  <Route path="fileupload" element={<FileUploadDocs />} />
+                  <Route path="passwordinput" element={<PasswordInputDocs />} />
                   <Route path="pininput" element={<PinInputDocs />} />
-                  <Route path="tagsinput" element={<TagsInputDocs />} />
+                  <Route path="progressbar" element={<ProgressBarDocs />} />
+                  <Route path="radiobutton" element={<RadioButtonDocs />} />
                   <Route
                     path="segmentedcontrol"
                     element={<SegmentedControlDocs />}
                   />
+                  <Route path="slider" element={<SliderDocs />} />
+                  <Route path="socialbutton" element={<SocialButtonDocs />} />
+                  <Route path="starrating" element={<StarRatingDocs />} />
+                  <Route path="switch" element={<SwitchDocs />} />
+                  <Route path="tagsinput" element={<TagsInputDocs />} />
                   <Route
                     path="*"
                     element={<Navigate to="/components/overview" replace />}
