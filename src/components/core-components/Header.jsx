@@ -77,7 +77,7 @@ export function Header() {
               )}
             </button>
 
-            <div className="pointer-events-none absolute right-[-60px] top-full mt-3 z-10 w-[240px] max-w-[calc(100vw-2rem)] rounded-xl border border-slate-200 bg-white/95 px-4 py-3 text-left text-sm text-slate-900 shadow-xl shadow-slate-900/5 backdrop-blur-xl opacity-0 scale-95 transition-all duration-200 ease-out dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-100 group-hover:opacity-100 group-hover:scale-100 group-focus-within:opacity-100 group-focus-within:scale-100">
+            <div className="pointer-events-none absolute right-[-60px] top-full mt-3 z-10 w-[240px] max-w-[calc(100vw-2rem)] rounded-xl border border-slate-200 bg-white/95 px-4 py-3 text-left text-sm text-slate-900 shadow-xl shadow-slate-900/5 backdrop-blur-xl opacity-0 scale-95 transition-all duration-200 ease-out dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-100 group-hover:opacity-100 group-hover:scale-100">
               <p className="text-xs text-slate-500 dark:text-slate-400">
                 {theme === "dark"
                   ? "Switch to light theme, Your choice is saved on this device."
