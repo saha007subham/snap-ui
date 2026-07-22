@@ -170,4 +170,4 @@ MIT License
 
 ## 👨‍💻 Author
 
-Built with ❤️ by Subham Saha
+Built with ❤️ by Subham Saha.
